@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 interface Props {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export default function RootLayout({ children }: Props) {
@@ -9,5 +9,5 @@ export default function RootLayout({ children }: Props) {
     <html lang="ko">
       <body>{children}</body>
     </html>
-  )
+  );
 }
