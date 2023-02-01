@@ -6,6 +6,7 @@ function GlobalStyles() {
 
 const styles = css`
   html {
+    height: 100%;
     box-sizing: border-box;
   }
 
@@ -15,9 +16,14 @@ const styles = css`
 
   body {
     margin: 0;
+    height: 100%;
     font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue',
       'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji',
       'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  }
+
+  #__next {
+    height: 100%;
   }
 
   button,

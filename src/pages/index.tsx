@@ -1,3 +1,9 @@
+import BaseLayout from '~/components/layout/BaseLayout';
+
 export default function HomePage() {
-  return <div>Home</div>;
+  return (
+    <BaseLayout>
+      <div>Home</div>
+    </BaseLayout>
+  );
 }
