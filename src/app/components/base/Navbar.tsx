@@ -6,10 +6,10 @@ function Navbar() {
   return (
     <StyledNavbar>
       <NavbarItem to="/" text="홈" icon={<Home />} />
-      <NavbarItem to="/" text="최신" icon={<Clock />} />
-      <NavbarItem to="/" icon={<Add />} />
-      <NavbarItem to="/" text="검색" icon={<Search />} />
-      <NavbarItem to="/" text="설정" icon={<Account />} />
+      <NavbarItem to="/?mode=recent" text="최신" icon={<Clock />} />
+      <NavbarItem to="/write" icon={<Add />} />
+      <NavbarItem to="/search" text="검색" icon={<Search />} />
+      <NavbarItem to="/account" text="마이" icon={<Account />} />
     </StyledNavbar>
   );
 }
