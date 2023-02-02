@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { colors } from '~/libs/colors';
 import { Account, Add, Clock, Home, Search } from '../vector';
 import NavbarItem from './NavbarItem';
 
@@ -19,6 +20,7 @@ const StyledNavbar = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border-top: 1px solid ${colors.gray1};
 `;
 
 export default Navbar;
