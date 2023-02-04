@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { rem } from 'polished';
 import { colors } from '~/libs/colors';
 import { Account, Add, Clock, Home, Search } from '../vector';
 import NavbarItem from './NavbarItem';
@@ -16,7 +17,7 @@ function Navbar() {
 }
 
 const StyledNavbar = styled.nav`
-  height: 4rem;
+  height: ${rem(64)};
   display: flex;
   justify-content: space-around;
   align-items: center;

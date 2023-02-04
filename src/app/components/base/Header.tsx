@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { rem } from 'polished';
 import { Logo } from '../vector';
 
 function Header() {
@@ -10,7 +11,7 @@ function Header() {
 }
 
 const StyledHeader = styled.header`
-  height: 4rem;
+  height: ${rem(64)};
   display: flex;
   justify-content: center;
   align-items: center;

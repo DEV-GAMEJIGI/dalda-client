@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { rem } from 'polished';
 import { colors } from '~/libs/colors';
 import AuthSocialButton from './AuthSocialButton';
 
@@ -18,17 +19,17 @@ function AuthSocialButtonGroup() {
 const Block = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2.375rem;
+  gap: ${rem(38)};
 `;
 
 const Group = styled.div`
   display: flex;
-  gap: 3rem;
+  gap: ${rem(48)};
 `;
 
 const Text = styled.span`
   text-align: center;
-  font-size: 0.875rem;
+  font-size: ${rem(14)};
   font-weight: bold;
   color: ${colors.gray3};
 `;

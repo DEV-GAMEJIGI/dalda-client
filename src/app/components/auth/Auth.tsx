@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { rem } from 'polished';
 import { Logo } from '../vector';
 import AuthSocialButtonGroup from './AuthSocialButtonGroup';
 
@@ -17,7 +18,7 @@ const Section = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10rem;
+  gap: ${rem(160)};
 `;
 
 export default Auth;

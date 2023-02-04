@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { rem } from 'polished';
 import React, { useEffect, useState } from 'react';
 import { colors } from '~/libs/colors';
 
@@ -31,7 +32,7 @@ const StyledLink = styled(Link)<{ pathname: string }>`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.125rem;
+  gap: ${rem(2)};
   text-decoration: none;
   color: ${(props) => (props.href === props.pathname ? colors.gray4 : colors.gray2)};
 
@@ -41,7 +42,7 @@ const StyledLink = styled(Link)<{ pathname: string }>`
 `;
 
 const Text = styled.div`
-  font-size: 0.625rem;
+  font-size: ${rem(10)};
   font-weight: bold;
 `;
 

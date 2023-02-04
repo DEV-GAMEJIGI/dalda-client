@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { rem } from 'polished';
 import React from 'react';
 import Header from '../base/Header';
 import Navbar from '../base/Navbar';
@@ -24,7 +25,7 @@ const Content = styled.main`
   flex: 1;
   overflow: scroll;
   overflow-x: hidden;
-  padding: 1rem;
+  padding: ${rem(16)};
 `;
 
 export default BaseLayout;
