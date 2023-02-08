@@ -7,3 +7,4 @@ export { default as Kakao } from './Kakao';
 export { default as Logo } from './Logo';
 export { default as Naver } from './Naver';
 export { default as Search } from './Search';
+export { default as Trending } from './Trending';
