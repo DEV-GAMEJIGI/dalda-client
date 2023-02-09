@@ -1,11 +1,12 @@
+import { User } from '~/libs/api/types';
 import { CustomStateCreator } from '.';
 
 export interface UserState {
-  user: any;
-  setUser: () => void;
+  user: User | null;
+  setUser: (user: User | null) => void;
 }
 
 export const createUserSlice: CustomStateCreator<UserState> = (set) => ({
   user: null,
-  setUser: () => set({ user: 'User' }),
+  setUser: (user) => set({ user }),
 });
