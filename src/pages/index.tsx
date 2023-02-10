@@ -2,6 +2,7 @@ import { GetServerSideProps } from 'next';
 import CommentList from '~/components/comment/CommentList';
 import BaseLayout from '~/components/layout/BaseLayout';
 import { getMyInfo } from '~/libs/api/auth';
+import { withClientCookie } from '~/libs/api/client';
 import { Comment } from '~/libs/api/types';
 import { json } from '~/libs/json';
 
@@ -18,7 +19,7 @@ export default function HomePage({ comments }: Props) {
 }
 
 export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
-  const user = await getMyInfo();
+  const user = await withClientCookie(() => getMyInfo(), context);
 
   /** @todo api select mode -> trending or recent */
   const mode = context.query.mode ?? 'trending';
