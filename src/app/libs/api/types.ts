@@ -1,15 +1,26 @@
+interface Page<T> {
+  page: number;
+  size: number;
+  isLast: boolean;
+  items: T[];
+}
+
+export type PaginationComment = Page<Comment>;
+
 export interface User {
-  id: number;
-  name: string;
+  handle: string;
+  username: string;
 }
 
 export interface Comment {
   id: number;
-  body: string;
+  content: string;
   tags: string[];
-  count: number;
+  subCommentsCount: number;
   likes: number;
+  isModified: boolean;
   createdAt: string;
   updatedAt: string;
   writer: User;
+  mentionUser: User | null;
 }
