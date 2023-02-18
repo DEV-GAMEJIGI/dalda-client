@@ -4,8 +4,7 @@ import { ParsedUrlQuery } from 'querystring';
 
 export const client = axios.create({
   withCredentials: true,
-  baseURL:
-    process.env.NODE_ENV === 'development' ? 'http://api.dalda.xyz' : 'https://api.dalda.xyz',
+  baseURL: process.env.API_HOST,
 });
 
 type AsyncFn<T> = () => Promise<T>;
