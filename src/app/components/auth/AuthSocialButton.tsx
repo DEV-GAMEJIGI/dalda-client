@@ -12,7 +12,7 @@ const icons = {
 };
 
 function AuthSocialButton({ provider }: Props) {
-  const host = process.env.NEXT_PUBLIC_API_HOST;
+  const host = process.env.API_HOST;
   const path = `${host}/oauth2/authorization/${provider}`;
   const Icon = icons[provider];
 

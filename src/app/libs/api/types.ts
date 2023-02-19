@@ -1,12 +1,3 @@
-interface Page<T> {
-  page: number;
-  size: number;
-  isLast: boolean;
-  items: T[];
-}
-
-export type PaginationComment = Page<Comment>;
-
 export interface User {
   handle: string;
   username: string;
@@ -24,3 +15,12 @@ export interface Comment {
   writer: User;
   mentionUser: User | null;
 }
+
+interface Page<T> {
+  page: number;
+  size: number;
+  isLast: boolean;
+  list: T[];
+}
+
+export type PaginationComment = Page<Comment>;
