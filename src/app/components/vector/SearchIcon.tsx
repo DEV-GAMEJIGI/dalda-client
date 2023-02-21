@@ -1,6 +1,6 @@
 import { SVGProps } from 'react';
 
-function Search(props: SVGProps<SVGSVGElement>) {
+function SearchIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       width="32"
@@ -18,4 +18,4 @@ function Search(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-export default Search;
+export default SearchIcon;

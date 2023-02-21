@@ -1,6 +1,6 @@
 import { SVGProps } from 'react';
 
-function Naver(props: SVGProps<SVGSVGElement>) {
+function NaverIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       width="48"
@@ -22,4 +22,4 @@ function Naver(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-export default Naver;
+export default NaverIcon;

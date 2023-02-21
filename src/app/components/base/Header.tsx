@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
 import { rem } from 'polished';
-import { Logo } from '../vector';
+import { LogoIcon } from '../vector';
 
 function Header() {
   return (
     <StyledHeader>
-      <Logo />
+      <LogoIcon />
     </StyledHeader>
   );
 }

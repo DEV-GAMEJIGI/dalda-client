@@ -1,6 +1,6 @@
 import { SVGProps } from 'react';
 
-function Account(props: SVGProps<SVGSVGElement>) {
+function AccountIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       width="32"
@@ -26,4 +26,4 @@ function Account(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-export default Account;
+export default AccountIcon;

@@ -1,6 +1,6 @@
 import { SVGProps } from 'react';
 
-function Google(props: SVGProps<SVGSVGElement>) {
+function GoogleIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       width="48"
@@ -31,4 +31,4 @@ function Google(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-export default Google;
+export default GoogleIcon;
