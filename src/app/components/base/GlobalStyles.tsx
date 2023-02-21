@@ -31,6 +31,18 @@ const styles = css`
   textarea {
     font-family: inherit;
   }
+
+  button {
+    padding: 0;
+    background: none;
+    border: none;
+    outline: none;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
 `;
 
 export default GlobalStyles;
