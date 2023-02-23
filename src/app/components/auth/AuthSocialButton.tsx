@@ -1,14 +1,14 @@
 import styled from '@emotion/styled';
-import { Google, Kakao, Naver } from '../vector';
+import { GoogleIcon, KakaoIcon, NaverIcon } from '../vector';
 
 interface Props {
   provider: 'google' | 'naver' | 'kakao';
 }
 
 const icons = {
-  google: Google,
-  kakao: Kakao,
-  naver: Naver,
+  google: GoogleIcon,
+  kakao: KakaoIcon,
+  naver: NaverIcon,
 };
 
 function AuthSocialButton({ provider }: Props) {
