@@ -9,6 +9,7 @@ export interface Comment {
   tags: string[];
   subCommentsCount: number;
   likes: number;
+  isLike: boolean;
   isModified: boolean;
   createdAt: string;
   updatedAt: string;
