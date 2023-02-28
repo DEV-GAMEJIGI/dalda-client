@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
 import { rem } from 'polished';
-import LegacyEditor from './LegacyEditor';
+import Editor from './Editor';
 
 function WriteForm() {
   return (
     <StyledForm>
       <div>Tag inputs</div>
-      <LegacyEditor />
+      <Editor />
       <button>Submit</button>
     </StyledForm>
   );
