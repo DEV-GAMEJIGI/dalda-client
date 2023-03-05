@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
 import { rem } from 'polished';
-import { Logo } from '../vector';
+import { LogoIcon } from '../vector';
 import AuthSocialButtonGroup from './AuthSocialButtonGroup';
 
 function Auth() {
   return (
     <Section>
-      <Logo width={131} height={57} />
+      <LogoIcon width={131} height={57} />
       <AuthSocialButtonGroup />
     </Section>
   );

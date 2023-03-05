@@ -11,6 +11,7 @@ const Block = styled.div`
   top: ${rem(16)};
   left: ${rem(16)};
   color: ${colors.gray2};
+  pointer-events: none;
 `;
 
 export default EditorPlaceholder;

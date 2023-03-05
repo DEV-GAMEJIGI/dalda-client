@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import {
   $convertFromMarkdownString,
   $convertToMarkdownString,
-  type Transformer,
+  TRANSFORMERS,
 } from '@lexical/markdown';
 import { AutoFocusPlugin } from '@lexical/react/LexicalAutoFocusPlugin';
 import { LexicalComposer } from '@lexical/react/LexicalComposer';
@@ -23,15 +23,15 @@ import CustomCodeHighlightPlugin from './plugins/CustomCodeHighlightPlugin';
 
 interface Props {
   defaultValue?: string;
-  transformers: Transformer[];
   onChange: (value: string) => void;
 }
 
-function Editor({ defaultValue = '', transformers, onChange }: Props) {
+function Editor({ defaultValue = '', onChange }: Props) {
+  const [HEADING, ...REST_TRANSFORMERS] = TRANSFORMERS;
+
   const onChangeListener = (editorState: EditorState) => {
     editorState.read(() => {
-      /** @todo markdown.replace(regex) */
-      const markdown = $convertToMarkdownString(transformers);
+      const markdown = $convertToMarkdownString(REST_TRANSFORMERS);
       onChange(markdown);
     });
   };
@@ -40,7 +40,7 @@ function Editor({ defaultValue = '', transformers, onChange }: Props) {
     <LexicalComposer
       initialConfig={{
         ...initialConfig,
-        editorState: () => $convertFromMarkdownString(defaultValue, transformers),
+        editorState: () => $convertFromMarkdownString(defaultValue, REST_TRANSFORMERS),
       }}
     >
       <Container>
@@ -56,7 +56,7 @@ function Editor({ defaultValue = '', transformers, onChange }: Props) {
           <CustomAutoLinkPlugin />
           <CustomCodeHighlightPlugin />
           <OnChangePlugin onChange={onChangeListener} />
-          <MarkdownShortcutPlugin transformers={transformers} />
+          <MarkdownShortcutPlugin transformers={REST_TRANSFORMERS} />
         </ContainerInner>
       </Container>
     </LexicalComposer>
