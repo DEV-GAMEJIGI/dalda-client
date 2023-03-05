@@ -7,6 +7,13 @@ import { HeadingNode, QuoteNode } from '@lexical/rich-text';
 import { TableCellNode, TableNode, TableRowNode } from '@lexical/table';
 import { rem } from 'polished';
 
+export const editorStyles = css`
+  .editor-paragraph {
+    margin: 0;
+    margin-bottom: ${rem(8)};
+  }
+`;
+
 export const initialConfig: InitialConfigType = {
   namespace: 'Editor',
   theme: {
@@ -28,8 +35,40 @@ export const initialConfig: InitialConfigType = {
       underlineStrikethrough: 'editor-text-underlineStrikethrough',
       code: 'editor-text-code',
     },
-    code: 'editor-code',
     link: 'editor-link',
+    code: 'editor-code',
+    codeHighlight: {
+      atrule: 'editor-tokenAttr',
+      attr: 'editor-tokenAttr',
+      boolean: 'editor-tokenProperty',
+      builtin: 'editor-tokenSelector',
+      cdata: 'editor-tokenComment',
+      char: 'editor-tokenSelector',
+      class: 'editor-tokenFunction',
+      'class-name': 'editor-tokenFunction',
+      comment: 'editor-tokenComment',
+      constant: 'editor-tokenProperty',
+      deleted: 'editor-tokenProperty',
+      doctype: 'editor-tokenComment',
+      entity: 'editor-tokenOperator',
+      function: 'editor-tokenFunction',
+      important: 'editor-tokenVariable',
+      inserted: 'editor-tokenSelector',
+      keyword: 'editor-tokenAttr',
+      namespace: 'editor-tokenVariable',
+      number: 'editor-tokenProperty',
+      operator: 'editor-tokenOperator',
+      prolog: 'editor-tokenComment',
+      property: 'editor-tokenProperty',
+      punctuation: 'editor-tokenPunctuation',
+      regex: 'editor-tokenVariable',
+      selector: 'editor-tokenSelector',
+      string: 'editor-tokenSelector',
+      symbol: 'editor-tokenProperty',
+      tag: 'editor-tokenProperty',
+      url: 'editor-tokenOperator',
+      variable: 'editor-tokenVariable',
+    },
   },
   onError: function (error: Error) {
     console.log(error);
@@ -48,10 +87,3 @@ export const initialConfig: InitialConfigType = {
     LinkNode,
   ],
 };
-
-export const editorStyles = css`
-  .editor-paragraph {
-    margin: 0;
-    margin-bottom: ${rem(8)};
-  }
-`;

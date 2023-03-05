@@ -19,6 +19,7 @@ import { colors } from '~/libs/colors';
 import { editorStyles, initialConfig } from '~/libs/editor';
 import EditorPlaceholder from './EditorPlaceholder';
 import CustomAutoLinkPlugin from './plugins/CustomAutoLinkPlugin';
+import CustomCodeHighlightPlugin from './plugins/CustomCodeHighlightPlugin';
 
 interface Props {
   defaultValue?: string;
@@ -53,6 +54,7 @@ function Editor({ defaultValue = '', transformers, onChange }: Props) {
           <AutoFocusPlugin />
           <ListPlugin />
           <CustomAutoLinkPlugin />
+          <CustomCodeHighlightPlugin />
           <OnChangePlugin onChange={onChangeListener} />
           <MarkdownShortcutPlugin transformers={transformers} />
         </ContainerInner>
