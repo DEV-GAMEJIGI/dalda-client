@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { rem } from 'polished';
 import { Comment } from '~/libs/api/types';
 import { colors } from '~/libs/colors';
+import { formatDate, formatNumber } from '~/libs/format';
 import TextIcon from '../system/TextIcon';
 import { CommentIcon, HeartOutlinedIcon } from '../vector';
 import CommentTags from './CommentTags';
@@ -15,15 +16,21 @@ function CommentItem({ comment }: Props) {
     <Block>
       <Top>
         <Username>{comment.writer.username}</Username>
-        <CreatedAt>방금 전 {comment.isModified && '(수정됨)'}</CreatedAt>
+        <CreatedAt>
+          {formatDate(comment.createdAt)} {comment.isModified && '(수정됨)'}
+        </CreatedAt>
       </Top>
       <Middle>
         <Content>{comment.content}</Content>
         <CommentTags tags={comment.tags} />
       </Middle>
       <Bottom>
-        <TextIcon text={`${comment.subCommentsCount}`} icon={<CommentIcon />} gap={8} />
-        <TextIcon text={`${comment.likes}`} icon={<HeartOutlinedIcon />} gap={8} />
+        <TextIcon
+          text={`${formatNumber(comment.subCommentsCount)}`}
+          icon={<CommentIcon />}
+          gap={8}
+        />
+        <TextIcon text={`${formatNumber(comment.likes)}`} icon={<HeartOutlinedIcon />} gap={8} />
       </Bottom>
     </Block>
   );
