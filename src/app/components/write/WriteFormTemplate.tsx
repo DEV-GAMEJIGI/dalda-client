@@ -1,12 +1,15 @@
 import styled from '@emotion/styled';
 import { rem } from 'polished';
-import Editor from './Editor';
+import React from 'react';
 
-function WriteForm() {
+interface Props {
+  children: React.ReactNode;
+}
+
+function WriteFormTemplate({ children }: Props) {
   return (
     <StyledForm>
-      <div>Tag inputs</div>
-      <Editor />
+      {children}
       <button>Submit</button>
     </StyledForm>
   );
@@ -19,4 +22,4 @@ const StyledForm = styled.form`
   gap: ${rem(16)};
 `;
 
-export default WriteForm;
+export default WriteFormTemplate;
