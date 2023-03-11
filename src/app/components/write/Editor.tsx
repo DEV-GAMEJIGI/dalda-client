@@ -73,6 +73,7 @@ const ContainerInner = styled.div`
   position: relative;
   border-radius: ${rem(5)};
   border: ${rem(1)} solid ${colors.gray1};
+  font-size: ${rem(14)};
 
   .editor-input {
     ${editorStyles};

@@ -1,9 +1,8 @@
 import { create, StateCreator } from 'zustand';
 import { devtools } from 'zustand/middleware';
 import { createUserSlice, UserState } from './user';
-import { createWriteSlice, WriteState } from './write';
 
-type RootState = UserState & WriteState;
+type RootState = UserState;
 
 export type CustomStateCreator<T> = StateCreator<RootState, [], [], T>;
 
@@ -14,6 +13,5 @@ const devtoolsMiddleware = (fn: CustomStateCreator<RootState>): any => {
 export const useRootStore = create<RootState>()(
   devtoolsMiddleware((...rest) => ({
     ...createUserSlice(...rest),
-    ...createWriteSlice(...rest),
   }))
 );

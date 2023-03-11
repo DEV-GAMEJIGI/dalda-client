@@ -10,7 +10,6 @@ function Input({ ...props }: Props) {
 }
 
 const StyledInput = styled.input`
-  padding: ${rem(10)} ${rem(16)};
   border: 1px solid ${colors.gray1};
   border-radius: ${rem(5)};
   outline: none;

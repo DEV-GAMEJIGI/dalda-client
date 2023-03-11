@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { rem } from 'polished';
 import React from 'react';
+import Button from '../system/Button';
 
 interface Props {
   children: React.ReactNode;
@@ -10,7 +11,7 @@ function WriteFormTemplate({ children }: Props) {
   return (
     <StyledForm>
       {children}
-      <button>Submit</button>
+      <Button>등록하기</Button>
     </StyledForm>
   );
 }

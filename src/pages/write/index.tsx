@@ -1,19 +1,32 @@
+import { useState } from 'react';
 import BaseLayout from '~/components/layout/BaseLayout';
 import Editor from '~/components/write/Editor';
+import TagEditor from '~/components/write/TagEditor';
 import WriteFormTemplate from '~/components/write/WriteFormTemplate';
-import { useRootStore } from '~/stores';
+import { PostCommentForm } from '~/libs/api/types';
 
 export default function WritePage() {
-  const { form, changeForm } = useRootStore();
+  const [form, setForm] = useState<PostCommentForm>({
+    content: '',
+    tags: [],
+  });
 
   const onChangeContent = (value: string) => {
-    changeForm('content', value);
+    setForm((prev) => {
+      return { ...prev, content: value };
+    });
+  };
+
+  const onChangeTags = (values: string[]) => {
+    setForm((prev) => {
+      return { ...prev, tags: values };
+    });
   };
 
   return (
     <BaseLayout>
       <WriteFormTemplate>
-        <div>Tags Component</div>
+        <TagEditor tags={form.tags} onChange={onChangeTags} />
         <Editor onChange={onChangeContent} />
       </WriteFormTemplate>
     </BaseLayout>
