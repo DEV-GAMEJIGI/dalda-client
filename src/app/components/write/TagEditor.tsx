@@ -63,15 +63,13 @@ const Tag = styled.div`
   display: flex;
   align-items: center;
   color: ${colors.personal};
+  font-size: ${rem(14)};
+  font-weight: bold;
 `;
 
 const StyledInput = styled(Input)`
   border: none;
   font-size: ${rem(14)};
-
-  ::placeholder {
-    color: ${colors.gray2};
-  }
 `;
 
 export default TagEditor;

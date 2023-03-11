@@ -13,6 +13,10 @@ const StyledInput = styled.input`
   border: 1px solid ${colors.gray1};
   border-radius: ${rem(5)};
   outline: none;
+
+  ::placeholder {
+    color: ${colors.gray2};
+  }
 `;
 
 export default Input;
