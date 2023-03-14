@@ -5,7 +5,7 @@ export interface User {
 
 export interface Comment {
   id: number;
-  content: string;
+  description: string;
   tags: string[];
   subCommentsCount: number;
   likes: number;
@@ -15,6 +15,11 @@ export interface Comment {
   updatedAt: string;
   writer: User;
   mentionUser: User | null;
+}
+
+interface CommentContent {
+  id: number;
+  content: string;
 }
 
 export interface PostCommentForm {

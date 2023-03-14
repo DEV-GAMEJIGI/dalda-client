@@ -21,7 +21,7 @@ function CommentItem({ comment }: Props) {
         </CreatedAt>
       </Top>
       <Middle>
-        <Content>{comment.content}</Content>
+        <Content>{comment.description}</Content>
         <CommentTags tags={comment.tags} />
       </Middle>
       <Bottom>
