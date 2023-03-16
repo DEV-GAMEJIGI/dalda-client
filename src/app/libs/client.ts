@@ -4,7 +4,7 @@ import { ParsedUrlQuery } from 'querystring';
 
 export const client = axios.create({
   withCredentials: true,
-  baseURL: process.env.API_HOST,
+  baseURL: process.env.NEXT_PUBLIC_API_HOST,
 });
 
 type AsyncFn<T> = () => Promise<T>;

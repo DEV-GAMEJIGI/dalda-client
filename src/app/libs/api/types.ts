@@ -17,19 +17,19 @@ export interface Comment {
   mentionUser: User | null;
 }
 
-interface CommentContent {
+export interface CommentContent {
   id: number;
   content: string;
 }
 
-export interface PostCommentForm {
+export interface PostCommentRequest {
   rootCommentId?: number;
   mentionUserHandle?: string;
   content: string;
   tags: string[];
 }
 
-interface Page<T> {
+export interface Page<T> {
   page: number;
   size: number;
   isLast: boolean;

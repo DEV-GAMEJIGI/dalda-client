@@ -1,14 +1,22 @@
-import { useState } from 'react';
+import { useRouter } from 'next/router';
+import React, { useState } from 'react';
 import BaseLayout from '~/components/layout/BaseLayout';
 import Editor from '~/components/write/Editor';
 import TagEditor from '~/components/write/TagEditor';
 import WriteFormTemplate from '~/components/write/WriteFormTemplate';
-import { PostCommentForm } from '~/libs/api/types';
+import { usePostCommentMutation } from '~/hooks/mutation/useCommentMutation';
+import { PostCommentRequest } from '~/libs/api/types';
 
 export default function WritePage() {
-  const [form, setForm] = useState<PostCommentForm>({
+  const router = useRouter();
+
+  const [form, setForm] = useState<PostCommentRequest>({
     content: '',
     tags: [],
+  });
+
+  const { mutateAsync: postComment } = usePostCommentMutation({
+    onSuccess: () => router.push('/?mode=recent'),
   });
 
   const onChangeContent = (value: string) => {
@@ -23,9 +31,14 @@ export default function WritePage() {
     });
   };
 
+  const onSubmitForm = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    await postComment(form);
+  };
+
   return (
     <BaseLayout>
-      <WriteFormTemplate>
+      <WriteFormTemplate onSubmit={onSubmitForm}>
         <TagEditor tags={form.tags} onChange={onChangeTags} />
         <Editor onChange={onChangeContent} />
       </WriteFormTemplate>

@@ -1,4 +1,4 @@
-import { client } from './client';
+import { client } from '../client';
 import { User } from './types';
 
 export const getMyInfo = async () => {

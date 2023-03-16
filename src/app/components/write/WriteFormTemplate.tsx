@@ -5,11 +5,12 @@ import Button from '../system/Button';
 
 interface Props {
   children: React.ReactNode;
+  onSubmit: React.FormEventHandler<HTMLFormElement>;
 }
 
-function WriteFormTemplate({ children }: Props) {
+function WriteFormTemplate({ children, onSubmit }: Props) {
   return (
-    <StyledForm>
+    <StyledForm onSubmit={onSubmit}>
       {children}
       <Button>등록하기</Button>
     </StyledForm>

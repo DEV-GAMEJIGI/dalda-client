@@ -2,9 +2,9 @@ import { GetServerSideProps } from 'next';
 import CommentList from '~/components/comment/CommentList';
 import BaseLayout from '~/components/layout/BaseLayout';
 import { getMyInfo } from '~/libs/api/auth';
-import { withClientCookie } from '~/libs/api/client';
 import { getComments } from '~/libs/api/comment';
 import { PaginationComment } from '~/libs/api/types';
+import { withClientCookie } from '~/libs/client';
 import { json } from '~/libs/json';
 
 interface Props {

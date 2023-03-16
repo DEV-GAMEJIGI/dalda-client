@@ -5,13 +5,19 @@ import GlobalStyles from '~/components/base/GlobalStyles';
 import { useAuthEffect } from '~/hooks/useAuthEffect';
 
 export default function App({ Component, pageProps }: AppProps) {
-  const queryClient = new QueryClient();
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        retry: false,
+      },
+    },
+  });
 
   useAuthEffect(pageProps.user);
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ReactQueryDevtools />
+      <ReactQueryDevtools position="top-right" />
       <GlobalStyles />
       <Component {...pageProps} />
     </QueryClientProvider>
