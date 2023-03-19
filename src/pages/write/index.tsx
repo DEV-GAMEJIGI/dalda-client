@@ -4,7 +4,7 @@ import BaseLayout from '~/components/layout/BaseLayout';
 import Editor from '~/components/write/Editor';
 import TagEditor from '~/components/write/TagEditor';
 import WriteFormTemplate from '~/components/write/WriteFormTemplate';
-import { usePostCommentMutation } from '~/hooks/mutation/useCommentMutation';
+import { usePostCommentMutation } from '~/hooks/mutation/usePostCommentMutation';
 import { PostCommentRequest } from '~/libs/api/types';
 
 export default function WritePage() {
