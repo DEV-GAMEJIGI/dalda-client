@@ -9,7 +9,7 @@ import { PostCommentRequest } from '~/libs/api/types';
 
 export default function WritePage() {
   const router = useRouter();
-
+  const [isEmpty, setIsEmpty] = useState(false);
   const [form, setForm] = useState<PostCommentRequest>({
     content: '',
     tags: [],
@@ -33,6 +33,10 @@ export default function WritePage() {
 
   const onSubmitForm = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (form.content.length === 0) {
+      return setIsEmpty(true);
+    }
     await postComment(form);
   };
 
@@ -40,7 +44,7 @@ export default function WritePage() {
     <BaseLayout>
       <WriteFormTemplate onSubmit={onSubmitForm}>
         <TagEditor tags={form.tags} onChange={onChangeTags} />
-        <Editor onChange={onChangeContent} />
+        <Editor onChange={onChangeContent} isEmpty={isEmpty} />
       </WriteFormTemplate>
     </BaseLayout>
   );

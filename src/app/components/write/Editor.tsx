@@ -22,11 +22,12 @@ import CustomAutoLinkPlugin from './plugins/CustomAutoLinkPlugin';
 import CustomCodeHighlightPlugin from './plugins/CustomCodeHighlightPlugin';
 
 interface Props {
+  isEmpty: boolean;
   defaultValue?: string;
   onChange: (value: string) => void;
 }
 
-function Editor({ defaultValue = '', onChange }: Props) {
+function Editor({ isEmpty, defaultValue = '', onChange }: Props) {
   const [HEADING, ...REST_TRANSFORMERS] = TRANSFORMERS;
 
   const onChangeListener = (editorState: EditorState) => {
