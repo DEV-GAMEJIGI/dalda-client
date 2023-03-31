@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import {
   $convertFromMarkdownString,
@@ -45,7 +46,7 @@ function Editor({ isEmpty, defaultValue = '', onChange }: Props) {
       }}
     >
       <Container>
-        <ContainerInner>
+        <ContainerInner isEmpty={isEmpty}>
           <RichTextPlugin
             contentEditable={<ContentEditable className="editor-input" />}
             placeholder={<EditorPlaceholder />}
@@ -69,7 +70,7 @@ const Container = styled.div`
   position: relative;
 `;
 
-const ContainerInner = styled.div`
+const ContainerInner = styled.div<{ isEmpty: boolean }>`
   height: 100%;
   position: relative;
   border-radius: ${rem(5)};
@@ -82,6 +83,12 @@ const ContainerInner = styled.div`
     padding: ${rem(16)};
     outline: none;
   }
+
+  ${(props) =>
+    props.isEmpty &&
+    css`
+      border-color: red;
+    `}
 `;
 
 export default Editor;
