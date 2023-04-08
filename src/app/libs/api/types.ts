@@ -33,6 +33,7 @@ export interface Page<T> {
   page: number;
   size: number;
   isLast: boolean;
+  nextPage: number;
   list: T[];
 }
 
